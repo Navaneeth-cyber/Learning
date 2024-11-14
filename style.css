@@ -1,137 +1,132 @@
-/* Basic Reset */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+h1, h2, h3, h4 {
+    font-family: 'Arial', sans-serif;
 }
 
-/* Header Styling */
-header {
-    background-color: #2d2f33;
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-}
-
+/* Top Bar */
 .top-bar {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    background-color: #2c3e50;
+    padding: 10px;
 }
 
-#linkedin-photo, #connection-count {
+#linkedin-photo {
+    border-radius: 50%;
     margin-right: 10px;
-    font-size: 0.9rem;
 }
 
-h1 {
-    font-size: 1.2rem;
-    color: #f5f5f5;
-}
-
-/* Menu Box */
-.menu-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3a3d42;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.menu-box nav a {
-    margin: 0 10px;
+#connection-count {
     color: #fff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
 }
 
-.menu-box nav a:hover {
-    color: #ffcc00;
-}
-
-.search-bar {
-    padding: 5px;
-    font-size: 0.8rem;
-}
-
-/* Sections */
-section {
+/* Pinned Name */
+.pinned-name {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    color: #333;
     padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
+    border-bottom: 2px solid #ccc;
 }
 
-section h2, section h3 {
-    color: #3a3d42;
-    margin-bottom: 10px;
+/* Menu */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #34495e;
 }
 
-iframe {
-    width: 100%;
-    height: 315px;
-    margin-top: 10px;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #2d2f33;
-    padding: 10px;
-    text-align: center;
-}
-
-footer p {
-    color: #ccc;
-    font-size: 0.8rem;
-}
-
-.social-icon {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #333;
+.menu-toggle {
+    background-color: #2980b9;
     color: #fff;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-    display: none;
+    font-size: 16px;
 }
 
-.scroll-to-top.visible {
+.menu-box {
+    display: none;
+    position: absolute;
+    background-color: #34495e;
+    top: 60px;
+    width: 100%;
+}
+
+.menu-box a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-box a:hover {
+    background-color: #2c3e50;
+}
+
+/* Show menu on toggle */
+.menu-box.show {
     display: block;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1rem;
+/* Video Embeds */
+iframe {
+    width: 100%;
+    height: 315px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Search Bar */
+.search-bar {
+    padding: 8px;
+    width: 200px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-box {
+        position: static;
+        width: auto;
     }
 
-    .menu-box nav a {
-        font-size: 0.8rem;
+    iframe {
+        height: 200px;
     }
 
-    .search-bar {
-        font-size: 0.7rem;
-    }
-
-    #linkedin-photo, .social-icon {
-        width: 40px;
-        height: 40px;
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
