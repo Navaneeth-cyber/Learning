@@ -7,25 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header with LinkedIn profile picture and user info -->
+    <!-- Header with LinkedIn profile picture -->
     <header>
         <div class="top-bar">
+            <!-- LinkedIn profile image and connection count -->
             <a href="https://www.linkedin.com/in/navaneeth-cyber" target="_blank">
                 <img src="https://via.placeholder.com/50" alt="LinkedIn Profile" id="linkedin-photo">
             </a>
             <div id="connection-count">Connections: 500+</div>
-            <h1>Navaneeth's Hub</h1>
         </div>
+        <h1 class="pinned-name">Navaneeth's Hub</h1>
 
-        <!-- Menu Box and Search Bar -->
-        <div class="menu-box">
-            <nav>
-                <a href="#roadmap">Roadmap</a>
-                <a href="#videos">Videos</a>
-                <a href="#tests">Tests</a>
-            </nav>
+        <!-- Menu and Search -->
+        <nav>
+            <div class="menu">
+                <button class="menu-toggle">Menu</button>
+                <div class="menu-box">
+                    <a href="#roadmap">Roadmap</a>
+                    <a href="#videos">Videos</a>
+                    <a href="#tests">Tests</a>
+                </div>
+            </div>
             <input type="text" class="search-bar" placeholder="Search topics...">
-        </div>
+        </nav>
     </header>
 
     <!-- Main Content -->
@@ -37,7 +41,8 @@
 
         <section id="videos">
             <h2>Curated Learning Videos</h2>
-            <!-- Video Links -->
+            
+            <!-- Front-End Development Videos -->
             <h3>Front-End Development</h3>
             <div>
                 <h4>HTML</h4>
@@ -51,7 +56,8 @@
                 <h4>JavaScript</h4>
                 <iframe src="https://www.youtube.com/embed/poo0BXryffI" title="JavaScript Tutorial in Tamil"></iframe>
             </div>
-            
+
+            <!-- Back-End Development Videos -->
             <h3>Back-End Development</h3>
             <div>
                 <h4>Node.js</h4>
@@ -62,28 +68,33 @@
                 <iframe src="https://www.youtube.com/embed/r5IyLq2k2Ps" title="Database Tutorial in Tamil"></iframe>
             </div>
 
-            <h3>IT Career Guidance</h3>
+            <!-- Career Guidance -->
+            <h3>IT Guidance</h3>
             <div>
-                <h4>Guide to IT Careers</h4>
+                <h4>IT Careers</h4>
                 <iframe src="https://www.youtube.com/embed/Ykd82-IKpE4" title="IT Career Guidance in Tamil"></iframe>
             </div>
         </section>
 
         <section id="tests">
-            <h2>Weekly Tests</h2>
+            <h2>COMING SOON</h2>
             <p>Complete weekly tests to earn points and track your progress!</p>
         </section>
     </main>
 
-    <!-- Footer with Instagram and WhatsApp links -->
+    <!-- Footer with social media and contact -->
     <footer>
-        <a href="https://www.instagram.com/lonely._.lover07" target="_blank">
-            <img src="https://via.placeholder.com/50" alt="Instagram Profile" class="social-icon">
-        </a>
-        <a href="https://wa.me/916382932703" target="_blank">
-            <img src="https://via.placeholder.com/50" alt="WhatsApp Contact" class="social-icon">
-        </a>
-        <p>If you found any bugs or interested to learn about this! ✨ report me!</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/lonely._.lover07" target="_blank">
+                <img src="https://via.placeholder.com/50" alt="Instagram Profile" id="instagram-photo">
+            </a>
+            <a href="https://wa.me/6382932703" target="_blank">
+                <img src="https://via.placeholder.com/50" alt="WhatsApp" id="whatsapp-photo">
+            </a>
+            <a href="mailto:p.navaneethan2005@gmail.com" target="_blank">
+                <img src="https://via.placeholder.com/50" alt="Email" id="email-photo">
+            </a>
+        </div>
     </footer>
 
     <script src="scripts.js"></script>
