@@ -1,3 +1,11 @@
+// Toggle Menu Visibility
+const menuToggle = document.querySelector('.menu-toggle');
+const menuBox = document.querySelector('.menu-box');
+
+menuToggle.addEventListener('click', () => {
+    menuBox.classList.toggle('show');
+});
+
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -27,33 +35,5 @@ scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
-    });
-});
-
-// Active Section Highlight on Scroll
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.classList.remove('active');
-        if (anchor.getAttribute('href').substring(1) === current) {
-            anchor.classList.add('active');
-        }
-    });
-});
-
-// Smooth Scrolling for Menu Links
-document.querySelectorAll('.menu-box a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
     });
 });
