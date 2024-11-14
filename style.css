@@ -105,3 +105,34 @@ button:hover {
     background-color: #005bb5;
     transform: translateY(-3px);
 }
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+}
+
+.scroll-to-top.visible {
+    display: block;
+    opacity: 0.9;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+    background-color: #005bb5;
+}
+
+/* Active Link Styling */
+nav a.active {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
