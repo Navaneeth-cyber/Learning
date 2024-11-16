@@ -5,30 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navaneeth's Learning Hub</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        h1, h2, h3, h4 {
+            margin: 0.5rem 0;
+        }
+
+        /* News Bar Styling */
+        .news-bar {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            font-size: 1rem;
+        }
+        .news-bar a {
+            color: #FFD700;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+
+        /* Countdown Styling */
+        #countdown {
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        /* Document Upload Section */
+        #document-upload {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            display: inline-block;
+            text-align: left;
+        }
+
+        /* Footer Message */
+        footer p {
+            margin: 0.5rem;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header with LinkedIn profile picture -->
-    <header>
-        <div class="top-bar">
-            <!-- LinkedIn profile image and connection count -->
-            <a href="https://www.linkedin.com/in/navaneeth-cyber" target="_blank">
-                <img src="https://via.placeholder.com/50" alt="LinkedIn Profile" id="linkedin-photo">
-            </a>
-            <div id="connection-count">Connections: 500+</div>
-        </div>
-        <h1 class="pinned-name">Navaneeth's Hub</h1>
+    <!-- News Bar -->
+    <div class="news-bar">
+        TCS CodeVita Open Round 1 ends in 
+        <span id="countdown">7:00:00</span>
+        hours. <a href="https://www.tcscodevita.com" target="_blank">Click here to participate</a>.
+    </div>
 
-        <!-- Menu and Search -->
+    <!-- Header -->
+    <header>
+        <h1>Navaneeth's Learning Hub</h1>
         <nav>
             <div class="menu">
-                <button class="menu-toggle">Menu</button>
-                <div class="menu-box">
+                <button class="menu-toggle" aria-label="Toggle Menu">Menu</button>
+                <div class="menu-box" style="display: none;">
                     <a href="#roadmap">Roadmap</a>
                     <a href="#videos">Videos</a>
                     <a href="#tests">Tests</a>
                 </div>
             </div>
-            <input type="text" class="search-bar" placeholder="Search topics...">
+            <input type="text" class="search-bar" placeholder="Search topics..." aria-label="Search topics">
         </nav>
     </header>
 
@@ -41,62 +95,91 @@
 
         <section id="videos">
             <h2>Curated Learning Videos</h2>
-            
-            <!-- Front-End Development Videos -->
+
+            <!-- Front-End Development -->
             <h3>Front-End Development</h3>
             <div>
                 <h4>HTML</h4>
-                <iframe src="https://www.youtube.com/embed/FYErehuSuuw" title="HTML Tutorial in Tamil"></iframe>
+                <iframe src="https://www.youtube.com/embed/FYErehuSuuw" title="HTML Tutorial in Tamil" allow="fullscreen"></iframe>
             </div>
             <div>
                 <h4>CSS</h4>
-                <iframe src="https://www.youtube.com/embed/vfs1wBDoqBY" title="CSS Tutorial in Tamil"></iframe>
+                <iframe src="https://www.youtube.com/embed/vfs1wBDoqBY" title="CSS Tutorial in Tamil" allow="fullscreen"></iframe>
             </div>
             <div>
                 <h4>JavaScript</h4>
-                <iframe src="https://www.youtube.com/embed/poo0BXryffI" title="JavaScript Tutorial in Tamil"></iframe>
-            </div>
-
-            <!-- Back-End Development Videos -->
-            <h3>Back-End Development</h3>
-            <div>
-                <h4>Node.js</h4>
-                <iframe src="https://www.youtube.com/embed/SdyzXQoQO18" title="Node.js Tutorial in Tamil"></iframe>
-            </div>
-            <div>
-                <h4>Database</h4>
-                <iframe src="https://www.youtube.com/embed/r5IyLq2k2Ps" title="Database Tutorial in Tamil"></iframe>
-            </div>
-
-            <!-- Career Guidance -->
-            <h3>IT Guidance</h3>
-            <div>
-                <h4>IT Careers</h4>
-                <iframe src="https://www.youtube.com/embed/Ykd82-IKpE4" title="IT Career Guidance in Tamil"></iframe>
+                <iframe src="https://www.youtube.com/embed/poo0BXryffI" title="JavaScript Tutorial in Tamil" allow="fullscreen"></iframe>
             </div>
         </section>
 
+        <!-- Document Upload Section -->
+        <section id="document-upload">
+            <h2>Submit Your Questions</h2>
+            <p>Have a coding or IT-related question? Upload your document below:</p>
+            <form action="/submit" method="post" enctype="multipart/form-data">
+                <label for="question-file">Choose a file:</label>
+                <input type="file" id="question-file" name="question-file" accept=".pdf,.doc,.docx,.txt" required>
+                <br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
         <section id="tests">
-            <h2>COMING SOON</h2>
+            <h2>Weekly Tests</h2>
             <p>Complete weekly tests to earn points and track your progress!</p>
         </section>
     </main>
 
-    <!-- Footer with social media and contact -->
+    <!-- Footer -->
     <footer>
+        <p>DM me for my code on Instagram or WhatsApp!</p>
         <div class="social-links">
             <a href="https://www.instagram.com/lonely._.lover07" target="_blank">
-                <img src="https://via.placeholder.com/50" alt="Instagram Profile" id="instagram-photo">
+                <img src="https://via.placeholder.com/50" alt="Instagram Profile">
             </a>
-            <a href="https://wa.me/6382932703" target="_blank">
-                <img src="https://via.placeholder.com/50" alt="WhatsApp" id="whatsapp-photo">
+            <a href="https://wa.me/1234567890" target="_blank">
+                <img src="https://via.placeholder.com/50" alt="WhatsApp Profile">
             </a>
             <a href="mailto:p.navaneethan2005@gmail.com" target="_blank">
-                <img src="https://via.placeholder.com/50" alt="Email" id="email-photo">
+                <img src="https://via.placeholder.com/50" alt="Email Icon">
             </a>
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <!-- JavaScript for Countdown Timer -->
+    <script>
+        // Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuBox = document.querySelector('.menu-box');
+        menuToggle.addEventListener('click', () => {
+            menuBox.style.display = menuBox.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Countdown Timer
+        function startCountdown(duration) {
+            const countdownElement = document.getElementById('countdown');
+            let timer = duration, hours, minutes, seconds;
+
+            const interval = setInterval(() => {
+                hours = Math.floor(timer / 3600);
+                minutes = Math.floor((timer % 3600) / 60);
+                seconds = timer % 60;
+
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                countdownElement.textContent = `${hours}:${minutes}:${seconds}`;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    countdownElement.textContent = 'Expired!';
+                }
+            }, 1000);
+        }
+
+        // Start countdown for 7 hours
+        startCountdown(7 * 60 * 60);
+    </script>
 </body>
 </html>
