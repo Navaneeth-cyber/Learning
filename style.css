@@ -3,130 +3,194 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    text-align: center; /* Center content by default */
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Arial', sans-serif;
+    margin: 0.5rem 0;
 }
 
-/* Top Bar */
-.top-bar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #2c3e50;
-    padding: 10px;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-#linkedin-photo {
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-#connection-count {
+/* News Bar */
+.news-bar {
+    background-color: #007BFF;
     color: #fff;
-}
-
-/* Pinned Name */
-.pinned-name {
-    font-size: 18px;
-    text-align: center;
-    font-weight: 500;
-    color: #333;
-    padding: 20px;
-    border-bottom: 2px solid #ccc;
-}
-
-/* Menu */
-nav {
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 15px;
-    background-color: #34495e;
 }
 
-.menu-toggle {
-    background-color: #2980b9;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+.news-bar a {
+    color: #FFD700;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* Header Styling */
+header {
+    position: relative;
+}
+
+.menu {
+    display: inline-block;
+    position: relative;
 }
 
 .menu-box {
     display: none;
     position: absolute;
-    background-color: #34495e;
-    top: 60px;
-    width: 100%;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: left;
+    border-radius: 5px;
 }
 
 .menu-box a {
     display: block;
-    color: #fff;
-    padding: 10px;
+    padding: 5px;
+    color: #333;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .menu-box a:hover {
-    background-color: #2c3e50;
+    background-color: #f0f0f0;
 }
 
-/* Show menu on toggle */
-.menu-box.show {
-    display: block;
+.menu-toggle {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
 }
 
-/* Video Embeds */
+.search-bar {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    margin: 2rem 0;
+}
+
 iframe {
-    width: 100%;
+    width: 80%;
+    max-width: 560px;
     height: 315px;
+    border: none;
+    margin: 1rem 0;
+}
+
+/* Document Upload Section */
+#document-upload {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+#document-upload form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#document-upload label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#document-upload input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     margin-bottom: 20px;
+    width: 100%;
+}
+
+#document-upload button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#document-upload button:hover {
+    background-color: #0056b3;
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
-    padding: 20px;
-    text-align: center;
+    margin-top: 2rem;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+footer p {
+    font-size: 1rem;
 }
 
 .social-links img {
+    border-radius: 50%;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    margin: 10px;
+    transition: transform 0.3s;
 }
 
-/* Search Bar */
-.search-bar {
-    padding: 8px;
-    width: 200px;
-    font-size: 14px;
-    border: 1px solid #ccc;
+.social-links img:hover {
+    transform: scale(1.1);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .menu-box {
-        position: static;
-        width: auto;
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 80%;
     }
 
     iframe {
-        height: 200px;
+        width: 100%;
     }
 
-    .social-links {
-        flex-direction: column;
-        gap: 10px;
+    #document-upload {
+        width: 90%;
+    }
+
+    .menu-box {
+        right: 0;
+        left: 0;
     }
 }
